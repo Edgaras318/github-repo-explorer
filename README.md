@@ -9,9 +9,6 @@ This project is a Vue 3 application built with Vite, designed to allow users to 
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
     - [Running the Application](#running-the-application)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - **Search by Language**: Users can select programming languages from a predefined list.

@@ -48,21 +48,24 @@
         label="Search Selected Filters"
         @click="applyFilters"
         aria-label="Search using selected filters"
+        :loading="loading"
     />
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
+import {computed, ref} from 'vue';
 import Button from 'primevue/button';
 import Divider from 'primevue/divider';
 import LanguageSelector from './LanguageSelector.vue';
 import DateRangePicker from './DateRangePicker.vue';
 import StarsFilter from './StarsFilter.vue';
 import { useReposStore } from '../store/repos';
+import RepoList from "@/components/RepoList.vue";
 
 export default {
   components: {
+    RepoList,
     Button,
     Divider,
     LanguageSelector,
@@ -85,6 +88,7 @@ export default {
       dateTo: "",
       minStars: "",
     });
+    const loading = computed(() => store.loading);
 
     const validateFields = () => {
       errors.value = {
@@ -142,7 +146,7 @@ export default {
     return {
       selectedLanguages, dateFrom, dateTo, minStars,
       applyFilters, languages, errors,
-      updateLanguages, updateDateFrom, updateDateTo, updateMinStars
+      updateLanguages, updateDateFrom, updateDateTo, updateMinStars, loading
     };
   }
 };

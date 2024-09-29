@@ -9,6 +9,7 @@
         <label for="from" class="required">From</label>
         <DatePicker
             id="from"
+            :maxDate="dateTo"
             :model-value="dateFrom"
             showIcon
             fluid

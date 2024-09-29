@@ -97,14 +97,27 @@ export const useReposStore = defineStore('repos', () => {
     };
 
     const handleError = (err) => {
+        // Clear any existing error message
+        error.value = '';
+
         if (err.response) {
-            error.value = `Error ${err.response.status}: ${err.response.data.message}`;
+            // If there are multiple errors, loop through each error and append its message
+            if (Array.isArray(err.response.data.errors) && err.response.data.errors.length > 0) {
+                error.value = `Error ${err.response.status}: ${err.response.data.message}\n`;
+                err.response.data.errors.forEach((errorItem) => {
+                    error.value += `${errorItem.message} - Please check your input. \n`;
+                });
+            } else {
+                // If no specific errors, show the general message
+                error.value = `Error ${err.response.status}: ${err.response.data.message}`;
+            }
         } else if (err.request) {
             error.value = 'No response from server. Please try again later.';
         } else {
             error.value = 'An error occurred. Please try again.';
         }
     };
+
 
     const buildDateRange = () => {
         const startDate = dateFrom.value ? new Date(dateFrom.value).toISOString().split('T')[0] : null;

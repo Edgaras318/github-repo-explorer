@@ -41,15 +41,17 @@
     />
     <Divider aria-hidden="true" />
 
-    <Button
-        id="apply-filters-button"
-        severity="info"
-        icon="pi pi-search"
-        label="Search Selected Filters"
-        @click="applyFilters"
-        aria-label="Search using selected filters"
-        :loading="loading"
-    />
+    <div class="btn-wrapper">
+      <Button
+          id="apply-filters-button"
+          severity="info"
+          icon="pi pi-search"
+          label="Search Selected Filters"
+          @click="applyFilters"
+          aria-label="Search using selected filters"
+          :loading="loading"
+      />
+    </div>
   </div>
 </template>
 
@@ -61,11 +63,9 @@ import LanguageSelector from './LanguageSelector.vue';
 import DateRangePicker from './DateRangePicker.vue';
 import StarsFilter from './StarsFilter.vue';
 import { useReposStore } from '../store/repos';
-import RepoList from "@/components/RepoList.vue";
 
 export default {
   components: {
-    RepoList,
     Button,
     Divider,
     LanguageSelector,
@@ -173,6 +173,16 @@ export default {
   padding: 15px 20px; /* Increased padding for more height */
   font-size: 1.1rem; /* Font size */
   line-height: 1.2; /* Line height to ensure good spacing */
+}
+.btn-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .btn-wrapper{
+    display: inline-block;
+  }
 }
 </style>
 

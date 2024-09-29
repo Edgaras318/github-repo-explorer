@@ -10,7 +10,7 @@
         :options="languages"
         filter
         placeholder="Select language..."
-        :max-selected-labels="2"
+
         aria-describedby="language-error"
         @update:model-value="updateSelectedLanguages"
     />
@@ -69,6 +69,11 @@ export default {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+:deep(.p-multiselect-label) {
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 </style>
 

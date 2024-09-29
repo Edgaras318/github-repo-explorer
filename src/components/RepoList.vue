@@ -1,9 +1,7 @@
 <template>
   <div class="repo-list" @scroll="handleScroll" role="region" aria-labelledby="repo-list-heading">
-    <h2 id="repo-list-heading" class="sr-only">Repositories for {{ language }}</h2>
-
     <!-- Language Title -->
-    <h2 class="language-badge" :style="{ backgroundColor: getLanguageColor(language) }">
+    <h2 class="language-badge p-16" :style="{ backgroundColor: getLanguageColor(language) }">
       {{ language || 'N/A' }}
     </h2>
 

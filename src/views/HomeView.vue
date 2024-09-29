@@ -5,7 +5,7 @@
       <Filters />
     </div>
 
-    <div>
+    <div class="w-full">
       <h1 class="title">GitHub Repositories</h1>
 
       <div v-if="dateRange" class="date-range" role="status" aria-live="polite">{{ dateRange }}</div>

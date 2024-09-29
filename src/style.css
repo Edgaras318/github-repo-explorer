@@ -1,3 +1,4 @@
+
 .flex {
     display: flex;
 }
@@ -42,4 +43,30 @@
 .error-message {
     color: red;
     margin-top: 0.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif; /* You can choose a different font */
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+body {
+    line-height: 1;
+}
+
+p-16 {
+    padding: 16px
 }

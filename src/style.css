@@ -1,0 +1,45 @@
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+.gap-2 {
+    gap: 2rem;
+}
+
+.gap-05 {
+    gap: 0.5rem;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.mb-05{
+    margin-bottom: 0.5rem;
+}
+
+.required::before {
+    content: '*';
+    color: red;
+    margin-right: 5px;
+}
+.error-message {
+    color: red;
+    margin-top: 0.5rem;
+}

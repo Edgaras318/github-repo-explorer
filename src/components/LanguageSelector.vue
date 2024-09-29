@@ -16,16 +16,20 @@
     />
 
     <!-- Error Message -->
-    <div v-if="errorMessage" id="language-error" class="error-message" role="alert">{{ errorMessage }}</div>
+    <Transition name="fade">
+      <div v-if="errorMessage" id="language-error" class="error-message" role="alert">{{ errorMessage }}</div>
+    </Transition>
   </div>
 </template>
 
 <script>
 import MultiSelect from "primevue/multiselect";
+import {Transition} from "vue";
 
 export default {
   components: {
     MultiSelect,
+    Transition
   },
   props: {
     selectedLanguages: {

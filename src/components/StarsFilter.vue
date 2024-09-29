@@ -9,18 +9,21 @@
         @update:model-value="updateMinStars"
         aria-describedby="stars-error"
     />
-    <div v-if="errorMessage" id="stars-error" class="error-message" role="alert">
-      {{ errorMessage }}
-    </div>
+    <Transition name="fade">
+      <div v-if="errorMessage" id="stars-error" class="error-message" role="alert">
+        {{ errorMessage }}
+      </div>
+    </Transition>
   </div>
 </template>
 
 <script>
 import InputNumber from 'primevue/inputnumber';
-
+import {Transition} from "vue";
 export default {
   components: {
     InputNumber,
+    Transition
   },
   props: {
     minStars: {

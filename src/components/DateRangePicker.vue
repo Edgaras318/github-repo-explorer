@@ -16,7 +16,9 @@
             aria-describedby="from-error"
             @update:model-value="updateDateFrom"
         />
-        <div v-if="errorFrom" id="from-error" class="error-message" role="alert">{{ errorFrom }}</div>
+        <Transition name="fade">
+          <div v-if="errorFrom" id="to-error" class="error-message" role="alert">{{ errorFrom }}</div>
+        </Transition>
       </div>
 
       <!-- Date To -->
@@ -32,7 +34,9 @@
             aria-describedby="to-error"
             @update:model-value="updateDateTo"
         />
-        <div v-if="errorTo" id="to-error" class="error-message" role="alert">{{ errorTo }}</div>
+        <Transition name="fade">
+          <div v-if="errorTo" id="to-error" class="error-message" role="alert">{{ errorTo }}</div>
+        </Transition>
       </div>
 
     </div>
@@ -41,10 +45,12 @@
 
 <script>
 import DatePicker from "primevue/datepicker";
+import {Transition} from "vue";
 
 export default {
   components: {
     DatePicker,
+    Transition
   },
   props: {
     dateFrom: {
